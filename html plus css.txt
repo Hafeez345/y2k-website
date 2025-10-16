@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2000s Fashion - Y2K Style Revival</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Global & Reset */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Y2K Border Effect (Keep for main sections, but remove from image containers) */
+        section, .slideshow-container {
+            border: 2px solid #ff69b4;
+            box-shadow: 8px 8px 0px rgba(255, 105, 180, 0.4);
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        /* HEADER Layout */
+        header {
+            background: #ff69b4;
+            color: #fff;
+            padding: 10px 0;
+            min-height: auto;
+            border-bottom: #e8491d 5px solid;
+            text-align: left; 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #branding {
+            display: flex; 
+            align-items: center;
+            flex-shrink: 0;
+        }
+        
+        #branding h1 { 
+            font-size: 1.8em;
+            margin: 0 0 0 10px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px #e8491d; 
+        }
+        
+        .logo { 
+            font-size: 1.4em; 
+            font-weight: 800; 
+            display: block; 
+            margin: 0;
+        }
+        
+        nav { 
+            padding-bottom: 0;
+            margin-left: 20px;
+        }
+        
+        nav ul { 
+            display: flex; 
+            justify-content: flex-end;
+            padding: 0; 
+            list-style: none; 
+            margin: 0; 
+        }
+        
+        nav ul li { 
+            padding: 0 10px; 
+        }
+        
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        header a:hover { color: #00ffff; }
+
+
+        /* HERO SECTION */
+        #hero {
+            background: linear-gradient(135deg, #00ffff 0%, #ff69b4 100%);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 30px;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        #hero h2 { font-size: 2.5em; color: white; margin-bottom: 10px; }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .cta-button:hover { background: #e8491d; transform: scale(1.05); }
+        
+        /* General Sections */
+        section {
+            padding: 30px 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            background: #fff;
+            padding-top: 50px;
+            margin-top: -50px;
+        }
+        section h2 {
+            color: #e8491d;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+
+        /* -------------------------------------- */
+        /* --- TRENDS CSS --- */
+        /* -------------------------------------- */
+        .trends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; 
+        }
+        .trend-item {
+            background: #ffffff; 
+            padding: 25px; 
+            border-radius: 12px; 
+            text-align: center;
+            border: 1px solid #ffcce5; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .trend-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #FF69B4 0%, #00FFFF 100%); 
+        }
+        .trend-item:hover { 
+            background: #f9f9f9; 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3); 
+        }
+        .trend-item h3 {
+            color: #8A2BE2; 
+            font-size: 1.4em;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .trend-item p {
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        /* ================================================= */
+        /* --- UNIVERSAL IMAGE STYLES (UPDATED TO 150x150px) --- */
+        /* ================================================= */
+        img {
+            /* *INCREASED SIZE HERE* */
+            width: 150px !important; 
+            height: 150px !important; 
+            border-radius: 50% !important; /* Circular */
+            object-fit: cover; 
+            display: block; 
+            margin: 15px auto 10px auto; 
+            border: 5px solid #00FFFF; /* Added a stronger Y2K border to the circle itself */
+            background-color: #ddd; 
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.6); /* Soft glow effect */
+        }
+        /* ================================================= */
+        /* --- END UNIVERSAL IMAGE STYLES --- */
+        /* ================================================= */
+
+
+        /* Gallery CSS (Removed container boxes/borders) */
+        #gallery {
+            border: 2px solid #00FFFF;
+            box-shadow: 8px 8px 0px rgba(0, 255, 255, 0.4);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; 
+            max-width: 100%;
+            margin: 0 auto; 
+        }
+
+        /* *REMOVED BOX/TABLE STYLING FOR GALLERY ITEMS* */
+        .gallery-item {
+            background-color: transparent; /* Remove white background */
+            border: none; /* Remove border */
+            border-radius: 0; /* Remove border radius */
+            padding: 10px;
+            box-shadow: none; /* Remove box shadow */
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .gallery-item:hover {
+            transform: none; /* Remove transformation on hover */
+            box-shadow: none; 
+        }
+
+        .gallery-item figure {
+            margin: 0; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-item figcaption {
+            font-weight: 700; 
+            font-size: 1em; 
+            color: #FF00FF; 
+            padding: 5px 0 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Brands CSS (Removed container boxes/borders) */
+        #brands {
+            border: 2px solid #E8491D;
+            box-shadow: 8px 8px 0px rgba(232, 73, 29, 0.4);
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        /* *REMOVED BOX/TABLE STYLING FOR BRAND ITEMS* */
+        .brand-item {
+            background-color: transparent; /* Remove white background */
+            border: none; /* Remove border */
+            border-radius: 0; /* Remove border radius */
+            padding: 20px;
+            box-shadow: none; /* Remove box shadow */
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .brand-item:hover {
+            transform: none; /* Remove transformation on hover */
+            box-shadow: none;
+        }
+        
+        /* Adjusted Brand image style to use the universal size but keep a subtle specific border */
+        .brand-item img {
+            border: 5px solid #FF69B4 !important; /* Specific brand border for contrast */
+            padding: 0 !important; /* Removed padding */
+        }
+
+        .brand-item h3 {
+            color: #FF69B4;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .brand-item p {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Shopping Layout (Placeholder updated to new size) */
+        #shopping .item-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 25px;
+            padding: 0 10px;
+        }
+
+        /* Keep the shopping card boxes for product grouping */
+        #shopping .shop-item-card {
+            background: #ffffff; 
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ff69b4; 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        #shopping .shop-item-card:hover {
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* IMAGE PLACEHOLDER MODIFIED to 150x150px circular */
+        #shopping .item-img-placeholder {
+            width: 150px; /* Larger size */
+            height: 150px; /* Larger size */
+            margin: 15px auto; 
+            position: relative;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1em; /* Adjusted font size for larger placeholder */
+            color: #666;
+            border-radius: 50%; 
+            border: 5px solid #8A2BE2; 
+            box-shadow: 4px 4px 0px #FF69B4; 
+            overflow: hidden;
+            padding-top: 0; 
+        }
+        
+        #shopping .item-img-placeholder::after {
+            content: attr(data-text); 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+        }
+        
+        #shopping h4 {
+            color: #ff69b4;
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        
+        /* COST STYLING IMPROVEMENT */
+        #shopping .cost {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: #e8491d; 
+            margin: 8px 0 15px 0;
+            display: block;
+            border-top: 1px dashed #eee;
+            padding-top: 8px;
+        }
+
+        #shopping .whatsapp-link {
+            background-color: #25D366;
+            color: white;
+            padding: 12px; 
+            display: block;
+            text-decoration: none;
+            border-radius: 50px; 
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+        #shopping .whatsapp-link:hover {
+            background-color: #1DA851;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer and Back-to-Top */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-top: 5px solid #00ffff;
+        }
+        
+        /* WhatsApp Footer Link Styling */
+        footer a {
+            color: #00FFFF; 
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #25D366; 
+            text-decoration: underline;
+        }
+
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            background-color: #ff69b4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background 0.3s;
+            border: 2px solid white;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            #branding {
+                margin-bottom: 10px;
+                justify-content: center;
+            }
+            #branding h1 { 
+                font-size: 2.0em; 
+            }
+            nav {
+                margin-left: 0;
+                width: 100%;
+            }
+            nav ul { 
+                justify-content: center; 
+            }
+            nav ul li { 
+                padding: 0 8px; 
+                font-size: 0.9em;
+            }
+        }
+        @media (max-width: 600px) {
+            .gallery-container, .brands-grid, .trends-grid { grid-template-columns: 1fr; }
+            /* Adjusted for small screens to prevent overflow */
+            img, #shopping .item-img-placeholder {
+                width: 100px !important; 
+                height: 100px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <span class="logo">✨ Y2K VIBE ✨</span>
+                <h1>2000s Fashion</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#trends">Trends</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#brands">Brands</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#shopping">Shop Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section id="hero">
+        <div class="container">
+            <h2>The Millennium Revival is Here!</h2>
+            <br>
+            <p><p>
+    The 2000s marked a vibrant, boundary-pushing era defined by <strong>digital optimism and glamorous excess</strong>. This was the decade of the <strong>'McBling'</strong> aesthetic, where low-rise denim and velour tracksuits reigned supreme, often paired with dazzling rhinestone embellishments and bold logomania. Fashion became democratized, heavily influenced by pop icons and the surge of reality television. We explore the fusion of <strong>streetwear comfort</strong>—think cargo pants and chunky sneakers—with high-octane <strong>Y2K futurism</strong>, characterized by metallic fabrics and micro-minis. Dive into the archives of a decade that was unapologetically loud, glittering, and forever iconic.
+</p> </p>
+<br>
+<br>
+            <a href="#shopping" class="cta-button">EXPLORE COLLECTIONS</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="trends">
+            <h2>🔥 Top 2000s Trends 🔥</h2>
+            <div class="trends-grid">
+                <div class="trend-item">
+                    <h3>Low-Rise Jeans</h3>
+                    <p>The iconic, hip-hugging denim that defined the era, often paired with crop tops.</p>
+                </div>
+                <div class="trend-item">
+                    <h3>Velour Tracksuits</h3>
+                    <p>Juicy Couture made these plush, comfortable, and often bedazzled sets a celebrity staple.</p>
+                </div>
+                <div class="trend-item">
+                    <h3>Baggy Cargo Pants</h3>
+                    <p>Military-inspired utility pants with multiple pockets, a casual yet edgy look.</p>
+                </div>
+                <div class="trend-item">
+                    <h3>Tiny Sunglasses</h3>
+                    <p>Small, futuristic, or colored lenses that offered more style than sun protection.</p>
+                </div>
+                <div class="trend-item">
+                    <h3>Bandanas & Trucker Hats</h3>
+                    <p>Essential accessories for an effortless, street-style aesthetic championed by stars.</p>
+                </div>
+                <div class="trend-item">
+                    <h3>Chunky Sneakers</h3>
+                    <p>The rise of "dad shoes" and platform sneakers for a bold, comfortable look.</p>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+
+        <section id="gallery">
+            <h2>📸 2000s Style Gallery 📸</h2>
+            
+            <div class="gallery-container">
+                
+                <div class="gallery-item">
+                    <figure>
+                        <img src="rise.jpg" alt="A model wearing low-rise jeans or trousers.">
+                        <figcaption>Low Rise Look 👖</figcaption>
+                    </figure>
+                </div>
+                
+                <div class="gallery-item">
+                    <figure>
+                        <img src="tracksuit.jpg" alt="A person in a velour or sporty tracksuit.">
+                        <figcaption>Tracksuit Vibe 👟</figcaption>
+                    </figure>
+                </div>
+                
+                <div class="gallery-item">
+                    <figure>
+                        <img src="accessory .jpg" alt="Close-up of chunky belts, small bags, or large sunglasses.">
+                        <figcaption>Accessory Focus 🕶</figcaption>
+                    </figure>
+                </div>
+
+                <div class="gallery-item">
+                    <figure>
+                        <img src="denim.jpg" alt="Someone wearing multiple denim items like a denim jacket and skirt.">
+                        <figcaption>Denim Everything 💙</figcaption>
+                    </figure>
+                </div>
+
+                <div class="gallery-item">
+                    <figure>
+                        <img src="baby.jpg" alt="A fitted baby tee or a halter neck top.">
+                        <figcaption>Baby Tees & Halters 👚</figcaption>
+                    </figure>
+                </div>
+
+                <div class="gallery-item">
+                    <figure>
+                        <img src="pop.jpg" alt="An outfit featuring bright, neon, or vibrant colors.">
+                        <figcaption>Pop of Color 💖</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="brands">
+            <h2>🛍 Iconic 2000s Brands 🛍</h2>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <img src="dutch.jpg" alt="Von Dutch Logo">
+                    <h3>Von Dutch</h3>
+                    <p>Famous for its trucker hats and denim, symbolizing early 2000s celebrity street style.</p>
+                </div>
+                <div class="brand-item">
+                    <img src="ed.jpg" alt="Ed Hardy Logo">
+                    <h3>Ed Hardy</h3>
+                    <p>Known for bold, tattoo-inspired graphics on t-shirts and hoodies, a favorite among pop stars.</p>
+                </div>
+                <div class="brand-item">
+                    <img src="juicy.jpg" alt="Juicy Couture Logo">
+                    <h3>Juicy Couture</h3>
+                    <p>The ultimate velour tracksuit brand, iconic for its comfy yet glamorous loungewear.</p>
+                </div>
+                <div class="brand-item">
+                    <img src="baby.jpg" alt="Baby Phat Logo">
+                    <h3>Baby Phat</h3>
+                    <p>Kimora Lee Simmons' brand offering sassy, urban-inspired clothing and accessories for women.</p>
+                </div>
+                 <div class="brand-item">
+                    <img src="puma.jpg" alt="Puma Logo">
+                    <h3>Puma (Suede)</h3>
+                    <p>Classic sneakers, especially the suede line, were a staple in casual 2000s footwear.</p>
+                </div>
+                 <div class="brand-item">
+                    <img src="religion.jpg" alt="True Religion Logo">
+                    <h3>True Religion</h3>
+                    <p>Distinguished by its signature stitching and premium denim, a luxury denim trendsetter.</p>
+                </div>
+                 <div class="brand-item">
+                    <img src="miss.jpg" alt="Miss Sixty Logo">
+                    <h3>Miss Sixty</h3>
+                    <p>Italian brand known for its trendy denim, often with unique washes and fits, like low-rise.</p>
+                </div>
+                 <div class="brand-item">
+                    <img src="rocca.jpg" alt="Rocawear Logo">
+                    <h3>Rocawear</h3>
+                    <p>Jay-Z's streetwear brand, popular for its baggy jeans, hoodies, and urban aesthetic.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="articles">
+            <h2>📰 Featured Articles 📰</h2>
+            <div class="article-list">
+                <h3>How 2000s Fashion is Making a Comeback</h3>
+                <p> The 2000s (Y2K) fashion is making a huge comeback, largely fueled by Gen Z's nostalgia and the cyclical nature of trends. Key items like low-rise jeans, cropped baby tees, velour tracksuits, and mini shoulder bags are dominating. This revival is powered by social media platforms like TikTok, allowing for a fresh, bold, and playful reinterpretation of the era’s maximalist and experimental aesthetic.</p> 
+                <br>
+                <hr>
+
+                
+                <h3>2000s Red Carpet Moments That Defined the Decade</h3>
+                <p> The 2000s red carpet was defined by bold, headline-making fashion. Iconic moments include Jennifer Lopez’s plunging green Versace gown (which famously led to the creation of Google Images), Britney and Justin's matching all-denim ensembles, and Bjork's unforgettable swan dress. These unapologetically showy and experimental looks cemented the decade’s maximalist aesthetic, prioritizing shock value and celebrity influence.</p>
+                <br>
+                <hr>
+                
+                <h3>Celebrity Style Icons of the 2000s</h3>
+                <p> The 2000s were dominated by celebrity-driven style, led by Paris Hilton and Britney Spears, who popularized the iconic Juicy Couture tracksuit and low-rise denim. Jennifer Lopez brought 'bling' and vibrant glamour, while Sarah Jessica Parker (as Carrie Bradshaw) championed high-fashion risks. Their casual yet extravagant looks set the playful, over-the-top, and logo-heavy tone for the entire Y2K era.</p>
+                <br>
+                <hr>
+            </div>
+        </section>
+        
+        <section id="shopping">
+            <h2>🛒 Shop the Look 🛒</h2>
+            <div class="item-list">
+                
+                <div class="shop-item-card">
+                    <div class="item-img-placeholder"> <img src="rise.jpg" alt="img 1"></div>
+                    <h4>Low-Rise Bootcut Jeans</h4>
+                    <span class="cost">$45.99</span>
+                    <a href="https://wa.me/923033744977?text=I%27m%20interested%20in%20the%20Low-Rise%20Bootcut%20Jeans%20you%20listed%20on%20the%202000s%20Fashion%20site." target="_blank" class="whatsapp-link">Click Here to Buy</a>
+                </div>
+                
+                <div class="shop-item-card">
+                    <div class="item-img-placeholder"> <img src="pink.jpg" alt="img 2"></div>
+                    <h4>Pink Velour Tracksuit (Set)</h4>
+                    <span class="cost">$79.50</span>
+                    <a href="https://wa.me/923033744977?text=I%27m%20interested%20in%20the%20Pink%20Velour%20Tracksuit%20you%20listed%20on%20the%202000s%20Fashion%20site." target="_blank" class="whatsapp-link">Click Here to Buy</a>
+                </div>
+                
+                <div class="shop-item-card">
+                    <div class="item-img-placeholder"><img src="mini.jpg" alt="img 3"></div>
+                    <h4>Mini Shoulder Bag (Baguette)</h4>
+                    <span class="cost">$22.00</span>
+                    <a href="https://wa.me/923033744977?text=I%27m%20interested%20in%20the%20Mini%20Shoulder%20Bag%20you%20listed%20on%20the%202000s%20Fashion%20site." target="_blank" class="whatsapp-link">Click Here to Buy</a>
+                </div>
+                
+                <div class="shop-item-card">
+                    <div class="item-img-placeholder"> <img src="butterfly.jpg" alt="img 4"></div>
+                    <h4>Butterfly Hair Clips (Pack)</h4>
+                    <span class="cost">$5.99</span>
+                    <a href="https://wa.me/923033744977?text=I%27m%20interested%20in%20the%20Butterfly%20Hair%20Clips%20you%20listed%20on%20the%202000s%20Fashion%20site." target="_blank" class="whatsapp-link">Click Here to Buy</a>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>2000s Fashion &copy; 2025. All Rights Reserved. | Designed with Y2K Love | <a href="https://wa.me/923033744977" target="_blank">Contact Us (WhatsApp)</a></p>
+    </footer>
+    
+    <button id="back-to-top" title="Go to top">🔝</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
